@@ -1,6 +1,6 @@
 const express = require('express');
 
-// const Players = require('../players/playersModel.js')
+const Players = require('../players/playersModel.js')
 
 const server = express();
 
@@ -11,13 +11,13 @@ server.get('/', (req, res) => {
 });
 
 server.get('/players', (req, res) => {
-    // Players.getAll()
-    // .then(players => {
-    //     res.status(200).json(players);
-    // })
-    // .catch(error => {
-    //     res.status(500).json(erros)
-    // })
+    Players.getAll()
+    .then(players => {
+        res.status(200).json(players);
+    })
+    .catch(error => {
+        res.status(500).json(erros)
+    })
 })
 
 module.exports = server;

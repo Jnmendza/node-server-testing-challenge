@@ -3,7 +3,12 @@ const db = require('../data/dbConfig.js');
 module.exports = {
   insert,
   remove,
+  getAll,
 };
+
+function getAll() {
+    return db('players');
+  }
 
 function insert(player) {
     return db('players')
