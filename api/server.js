@@ -20,4 +20,16 @@ server.get('/players', (req, res) => {
     })
 })
 
+server.delete('/:id', (req, res) => {
+    const {id} = req.params
+
+    Players.remove(id)
+    .then(deleted => {
+        res.status(200).json(deleted);
+    })
+    .catch(error => {
+        res.status(500).json(error)
+    })
+})
+
 module.exports = server;

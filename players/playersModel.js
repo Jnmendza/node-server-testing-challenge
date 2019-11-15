@@ -21,5 +21,8 @@ function insert(player) {
 }
 
 function remove(id) {
-    return null;
+    return db('players')
+        .where({ id })
+        .del();
 }
+
